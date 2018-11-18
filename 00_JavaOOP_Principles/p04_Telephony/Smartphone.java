@@ -1,6 +1,6 @@
 package L00_JavaOOP_Principles.p04_Telephony;
 
-public class Smartphone implements Callable, Browsable{
+public class Smartphone implements Callable, Browsable {
     @Override
     public void browseInWeb(String URL) {
         for (int i = 0; i < URL.length(); i++) {

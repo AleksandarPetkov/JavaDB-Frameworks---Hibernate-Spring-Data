@@ -12,7 +12,7 @@ public class Main {
             String[] studentsInfo = reader.readLine().split("\\s+");
             Human student = new Student(studentsInfo[0], studentsInfo[1], studentsInfo[2]);
             System.out.println(student.toString());
-        } catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
             return;
         }
@@ -23,7 +23,7 @@ public class Main {
             Human worker = new Worker(workerInfo[0], workerInfo[1],
                     Double.parseDouble(workerInfo[2]), Double.parseDouble(workerInfo[3]));
             System.out.println(worker.toString());
-        } catch (IllegalArgumentException ex){
+        } catch (IllegalArgumentException ex) {
             System.out.println(ex.getMessage());
             return;
         }

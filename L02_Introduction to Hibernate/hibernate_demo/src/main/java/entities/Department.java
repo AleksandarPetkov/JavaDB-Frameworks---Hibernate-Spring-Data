@@ -32,7 +32,7 @@ public class Department {
     }
 
     @ManyToOne
-    @JoinColumn(name = "manager_id",referencedColumnName = "employee_id")
+    @JoinColumn(name = "manager_id", referencedColumnName = "employee_id")
     public Employee getManager() {
         return manager;
     }

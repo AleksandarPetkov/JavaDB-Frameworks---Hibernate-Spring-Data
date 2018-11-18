@@ -9,27 +9,27 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String currentAnimal = "";
-        while (true){
+        while (true) {
             String[] line = reader.readLine().split("\\s+");
-            if (line[0].equals("Beast!")){
+            if (line[0].equals("Beast!")) {
                 break;
-            } else if (line[0].equals("Animal")){
+            } else if (line[0].equals("Animal")) {
                 System.out.println("Not implemented!");
                 continue;
-            } else if (line[0].isEmpty()){
+            } else if (line[0].isEmpty()) {
                 System.out.println("Invalid input!");
                 return;
             }
 
-            if (line.length == 1){
+            if (line.length == 1) {
                 currentAnimal = line[0];
             } else {
-                switch (currentAnimal){
+                switch (currentAnimal) {
                     case "Dog":
                         try {
                             Animal dog = new Dog(line[0], Integer.parseInt(line[1]), line[2]);
                             System.out.println(dog.toString());
-                        }catch (IllegalArgumentException ex){
+                        } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
                         break;
@@ -37,7 +37,7 @@ public class Main {
                         try {
                             Animal cat = new Cat(line[0], Integer.parseInt(line[1]), line[2]);
                             System.out.println(cat.toString());
-                        }catch (IllegalArgumentException ex){
+                        } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
                         break;
@@ -45,7 +45,7 @@ public class Main {
                         try {
                             Animal frog = new Frog(line[0], Integer.parseInt(line[1]), line[2]);
                             System.out.println(frog.toString());
-                        }catch (IllegalArgumentException ex){
+                        } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
 
@@ -54,7 +54,7 @@ public class Main {
                         try {
                             Animal kitten = new Kitten(line[0], Integer.parseInt(line[1]), line[2]);
                             System.out.println(kitten.toString());
-                        }catch (IllegalArgumentException ex){
+                        } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
                         }
 
@@ -64,9 +64,10 @@ public class Main {
                             Animal tomcat = new Tomcat(line[0], Integer.parseInt(line[1]), line[2]);
                             System.out.println(tomcat.toString());
                             break;
-                        }catch (IllegalArgumentException ex){
+                        } catch (IllegalArgumentException ex) {
                             System.out.println(ex.getMessage());
-                        }default:
+                        }
+                    default:
                         System.out.println("Invalid input!");
                         break;
 

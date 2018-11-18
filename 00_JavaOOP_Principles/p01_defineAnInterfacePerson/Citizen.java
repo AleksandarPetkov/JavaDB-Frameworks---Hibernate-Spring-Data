@@ -13,7 +13,7 @@ public class Citizen implements Person {
         return this.age;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 

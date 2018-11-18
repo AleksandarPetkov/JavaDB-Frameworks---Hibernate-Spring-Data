@@ -9,33 +9,33 @@ public abstract class Human {
         this.secondName = setLastname(secondName);
     }
 
-     String setFirstName(String firstName) {
+    String setFirstName(String firstName) {
         char firstLetter = firstName.charAt(0);
         if (Character.isLowerCase(firstLetter)) {
             throw new IllegalArgumentException("Expected upper case letter!Argument: firstName");
         } else if (firstName.length() < 3) {
             throw new IllegalArgumentException("Expected length at least 4 symbols!Argument: firstName");
-        }else {
+        } else {
             return firstName;
         }
     }
 
-    String setLastname(String lastName){
+    String setLastname(String lastName) {
         char firstLetter = lastName.charAt(0);
         if (Character.isLowerCase(firstLetter)) {
             throw new IllegalArgumentException("Expected upper case letter!Argument: lastName");
         } else if (lastName.length() < 3) {
             throw new IllegalArgumentException("Expected length at least 3 symbols!Argument: lastName");
-        }else {
+        } else {
             return lastName;
         }
     }
 
-     String getFirstName() {
+    String getFirstName() {
         return this.firstName;
     }
 
-     String getSecondName() {
+    String getSecondName() {
         return this.secondName;
     }
 }

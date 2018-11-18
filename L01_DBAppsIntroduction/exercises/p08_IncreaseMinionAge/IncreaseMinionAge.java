@@ -7,10 +7,10 @@ import java.sql.*;
 import java.util.Properties;
 
 public class IncreaseMinionAge {
-        static final String URL = "jdbc:mysql://localhost:3306/";
-        static final String DATABASE = "minions_db";
-        static final String USER = "root";
-        static final String PASS = "1234";
+    static final String URL = "jdbc:mysql://localhost:3306/";
+    static final String DATABASE = "minions_db";
+    static final String USER = "root";
+    static final String PASS = "1234";
 
     public static void main(String[] args) throws SQLException, IOException {
         Properties props = new Properties();

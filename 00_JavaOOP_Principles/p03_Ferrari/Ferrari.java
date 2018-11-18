@@ -22,7 +22,7 @@ public class Ferrari implements Car {
 
     @Override
     public String useBrakes() {
-       return "Brakes!";
+        return "Brakes!";
     }
 
     @Override
@@ -32,11 +32,11 @@ public class Ferrari implements Car {
 
     @Override
     public String toString() {
-       StringBuilder sb = new StringBuilder();
-       sb.append(getModel()).append("/")
-               .append(useBrakes()).append("/")
-               .append(pushTheGasPedal()).append("/")
-               .append(getDriverName());
-       return sb.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(getModel()).append("/")
+                .append(useBrakes()).append("/")
+                .append(pushTheGasPedal()).append("/")
+                .append(getDriverName());
+        return sb.toString();
     }
 }

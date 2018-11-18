@@ -12,15 +12,15 @@ public class Main {
 
         BaseCitizens citizen = null;
         List<String> list = new ArrayList<>();
-        while (true){
+        while (true) {
             int counter = 0;
 
             String[] tokens = reader.readLine().split("\\s+");
-            if (tokens[0].equals("End")){
+            if (tokens[0].equals("End")) {
                 break;
             }
 
-            if (tokens.length == 3){
+            if (tokens.length == 3) {
                 citizen = new Citizens(tokens[0], Integer.parseInt(tokens[1]), tokens[2]);
                 list.add(tokens[2]);
             } else {
@@ -31,7 +31,7 @@ public class Main {
 
         String checkID = reader.readLine();
         for (String id : list) {
-            if ( id.endsWith(checkID)){
+            if (id.endsWith(checkID)) {
                 System.out.println(id);
             }
         }

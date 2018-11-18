@@ -12,15 +12,15 @@ public class Main {
 
         BaseCitizens citizen = null;
         List<String> listBirthday = new ArrayList<>();
-        while (true){
+        while (true) {
             int counter = 0;
 
             String[] tokens = reader.readLine().split("\\s+");
-            if (tokens[0].equals("End")){
+            if (tokens[0].equals("End")) {
                 break;
             }
 
-            switch (tokens[0]){
+            switch (tokens[0]) {
                 case "Citizen":
                     citizen = new Citizens(tokens[1], Integer.parseInt(tokens[2]), tokens[3], tokens[4]);
                     listBirthday.add(tokens[4]);
@@ -34,7 +34,7 @@ public class Main {
 
         String checkID = reader.readLine();
         for (String date : listBirthday) {
-            if ( date.endsWith(checkID)){
+            if (date.endsWith(checkID)) {
                 System.out.println(date);
             }
         }

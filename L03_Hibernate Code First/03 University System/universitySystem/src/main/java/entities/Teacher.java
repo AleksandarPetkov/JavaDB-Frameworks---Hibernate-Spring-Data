@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "teachers")
-public class Teacher extends Person{
+public class Teacher extends Person {
 
     @Column
     private String email;

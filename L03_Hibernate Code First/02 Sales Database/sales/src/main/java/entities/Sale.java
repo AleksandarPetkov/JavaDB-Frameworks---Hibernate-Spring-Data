@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "sale")
-public class Sale extends BaseEntity{
+public class Sale extends BaseEntity {
 
     @ManyToOne(targetEntity = Product.class)
     @JoinColumn(name = "product_id", referencedColumnName = "id")

@@ -1,6 +1,6 @@
 package L00_JavaOOP_Principles.p05_BorderControl;
 
-public abstract class BaseCitizen implements BaseCitizens{
+public abstract class BaseCitizen implements BaseCitizens {
     private String id;
     private String name;
 
@@ -9,11 +9,11 @@ public abstract class BaseCitizen implements BaseCitizens{
         this.name = name;
     }
 
-     public String getId() {
+    public String getId() {
         return this.id;
     }
 
-     public String getName() {
+    public String getName() {
         return this.name;
     }
 }

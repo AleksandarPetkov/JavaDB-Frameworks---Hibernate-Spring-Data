@@ -11,28 +11,28 @@ public abstract class Animal {
         this.gender = setGender(denger);
     }
 
-     String setName(String name) {
-        if (name.isEmpty()){
+    String setName(String name) {
+        if (name.isEmpty()) {
             throw new IllegalArgumentException("Invalid input!");
         } else {
             return name;
         }
-     }
+    }
 
-     int setAge(int age){
-        if (age < 0){
+    int setAge(int age) {
+        if (age < 0) {
             throw new IllegalArgumentException("Invalid input!");
         } else {
             return age;
         }
-     }
+    }
 
-     String setGender(String gender) {
-        if (gender.isEmpty()){
+    String setGender(String gender) {
+        if (gender.isEmpty()) {
             throw new IllegalArgumentException("Invalid input!");
-        } else if(gender.equals("Male")) {
-           return gender;
-        }else if(gender.equals("Female")) {
+        } else if (gender.equals("Male")) {
+            return gender;
+        } else if (gender.equals("Female")) {
             return gender;
         } else {
             throw new IllegalArgumentException("Invalid input!");
@@ -57,7 +57,7 @@ public abstract class Animal {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(getClass().getSimpleName()).append(System.lineSeparator())
-                .append(String.format("%s %d %s",getName(), getAge(), getGenger())).append(System.lineSeparator())
+                .append(String.format("%s %d %s", getName(), getAge(), getGenger())).append(System.lineSeparator())
                 .append(produceSound());
         return sb.toString();
     }

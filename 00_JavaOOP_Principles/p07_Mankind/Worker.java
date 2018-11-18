@@ -27,13 +27,13 @@ public class Worker extends Human {
     }
 
     @Override
-    String setLastname(String lastName){
+    String setLastname(String lastName) {
         char firstLetter = lastName.charAt(0);
         if (Character.isLowerCase(firstLetter)) {
             throw new IllegalArgumentException("Expected upper case letter!Argument: lastName");
         } else if (lastName.length() < 3) {
             throw new IllegalArgumentException("Expected length more than 3 symbols!Argument: lastName");
-        }else {
+        } else {
             return lastName;
         }
     }
@@ -54,11 +54,11 @@ public class Worker extends Human {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("First Name: %s%n",getFirstName()))
+        sb.append(String.format("First Name: %s%n", getFirstName()))
                 .append(String.format("Last Name: %s%n", getSecondName()))
-                .append(String.format("Week Salary: %.2f%n",getSalary()))
-                .append(String.format("Hours per day: %.2f%n",getHourPerDay()))
-                .append(String.format("Salary per hour: %.2f%n",getSalaryPerHour()));
+                .append(String.format("Week Salary: %.2f%n", getSalary()))
+                .append(String.format("Hours per day: %.2f%n", getHourPerDay()))
+                .append(String.format("Salary per hour: %.2f%n", getSalaryPerHour()));
         return sb.toString();
     }
 }

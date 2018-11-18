@@ -17,7 +17,7 @@ public class RemoveVillain {
         props.setProperty("user", USER);
         props.setProperty("password", PASS);
 
-        Connection conn = DriverManager.getConnection(URL + DATABASE , props);
+        Connection conn = DriverManager.getConnection(URL + DATABASE, props);
         Statement statement = conn.createStatement();
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<products>
+    <product name="TERSI" price="554.91" seller="Williamson"/>
+    <product name="DAYWEAR PLUS MULTI PROTECTION TINTED MOISTURIZER" price="555.12" seller="Gomez"/>
+    <product name="Ketorolac Tromethamine" price="608.18" seller="Fox"/>
+    <product name="No7 Protect and Perfect Foundation Sunscreen Broad Spectrum SPF 15 Cool Ivory" price="616.19" seller="Day"/>
+    <product name="Glipizide" price="621.78" seller="Clark"/>
+    <product name="Foaming Hand Sanitizer" price="624.72" seller="Gilbert"/>
+    <product name="CLARINS Ever Matte SPF 15 - 105 Nude" price="696.06" seller="Lawson"/>
+    <product name="Pleo Lat" price="720.08" seller="Fox"/>
+    <product name="Meloxicam" price="809.18" seller="Parker"/>
+    <product name="Clarins Paris Skin Illusion - 114 cappuccino" price="811.42" seller="Barnes"/>
+    <product name="LV-FX" price="820.87" seller="Lawson"/>
+    <product name="IOPE SUPER VITAL" price="824.68" seller="Fox"/>
+    <product name="Shopko Lip Treatment" price="861.42" seller="Fox"/>
+    <product name="Levothyroxine Sodium" price="885.86" seller="Lawson"/>
+    <product name="Spironolactone" price="933.69" seller="Mitchell"/>
+    <product name="pain relief" price="938.23" seller="Williamson"/>
+    <product name="NEO-POLY-BAC HYDRO" price="967.32" seller="Perez"/>
+    <product name="Clearskin" price="968.59" seller="Barnes"/>
+</products>

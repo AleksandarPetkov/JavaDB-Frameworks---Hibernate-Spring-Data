@@ -6,7 +6,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
 
-public class XmlParserImpl implements XmlParser{
+public class XmlParserImpl implements XmlParser {
 
     @Override
     @SuppressWarnings("unchecked")

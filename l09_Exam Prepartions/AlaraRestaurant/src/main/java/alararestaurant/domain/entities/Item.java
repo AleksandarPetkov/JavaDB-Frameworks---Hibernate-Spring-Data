@@ -3,12 +3,13 @@ package alararestaurant.domain.entities;
 //        •	category – the item’s category (required)
 //        •	price – decimal (non-negative, minimum value: 0.01, required)
 //        •	orderItems – collection of type OrderItem
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
 @Entity(name = "items")
-public class Item extends BaseEntity{
+public class Item extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String name;

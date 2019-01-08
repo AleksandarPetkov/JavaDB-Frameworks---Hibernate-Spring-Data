@@ -12,10 +12,10 @@ import java.util.Optional;
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
     Optional<Category> findByName(String name);
 
-    @Query( "SELECT c  " +
+    @Query("SELECT c  " +
             "FROM alararestaurant.domain.entities.Category c" +
             " JOIN c.items i " +
             "GROUP BY c.id ORDER BY size(c.items) DESC, sum(i.price) DESC"
-          )
+    )
     List<Category> categoriesByCountofItems();
 }

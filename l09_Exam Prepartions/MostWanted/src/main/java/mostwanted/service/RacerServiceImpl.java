@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public class RacerServiceImpl implements RacerService{
+public class RacerServiceImpl implements RacerService {
     private static final String RACERS_FILE_PATH = "D:\\MostWanted\\src\\main\\resources\\files\\racers.json";
 
     private final RacerRepository racerRepository;
@@ -49,24 +49,24 @@ public class RacerServiceImpl implements RacerService{
 
     @Override
     public String importRacers(String racersFileContent) {
-       StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
 
         RacersSeedDto[] racersSeedDto = this.gson.fromJson(racersFileContent, RacersSeedDto[].class);
 
         for (RacersSeedDto racerDto : racersSeedDto) {
-            if (!this.validationUtil.isValid(racerDto)){
+            if (!this.validationUtil.isValid(racerDto)) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }
 
             Racer racerEntity = this.racerRepository.findByName(racerDto.getName()).orElse(null);
-            if (racerEntity != null){
+            if (racerEntity != null) {
                 sb.append(Constants.DUPLICATE_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }
 
             Town homeTown = this.townRepository.findByName(racerDto.getHomeTown()).orElse(null);
-            if (homeTown == null){
+            if (homeTown == null) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }

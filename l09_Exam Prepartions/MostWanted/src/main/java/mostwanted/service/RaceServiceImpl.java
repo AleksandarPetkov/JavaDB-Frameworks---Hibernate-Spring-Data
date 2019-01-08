@@ -63,7 +63,7 @@ public class RaceServiceImpl implements RaceService {
         for (RaceSeedDto raceDto : raceImportRootDto.getRaceSeedDto()) {
 
             District districtEntity = this.districtRepository.findByName(raceDto.getDistrictName()).orElse(null);
-            if (!this.validationUtil.isValid(raceDto) || districtEntity == null){
+            if (!this.validationUtil.isValid(raceDto) || districtEntity == null) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }
@@ -74,7 +74,7 @@ public class RaceServiceImpl implements RaceService {
             List<RaceEntry> raceEntries = new ArrayList<>();
             for (EntrySeedDto raceEntrySeedDto : raceDto.getEntryRoodSeedDto().getEntrySeedDtos()) {
                 RaceEntry currentRaceEntry = this.raceEntryRepository.findById(raceEntrySeedDto.getId()).orElse(null);
-                if (currentRaceEntry == null){
+                if (currentRaceEntry == null) {
                     sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                     continue;
                 }

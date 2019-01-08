@@ -52,13 +52,13 @@ public class CarServiceImpl implements CarService {
 
         CarSeedDto[] carSeedDtos = this.gson.fromJson(carsFileContent, CarSeedDto[].class);
         for (CarSeedDto carDto : carSeedDtos) {
-            if (!this.validationUtil.isValid(carDto)){
+            if (!this.validationUtil.isValid(carDto)) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }
 
             Racer racerEntity = this.racerRepository.findByName(carDto.getRacerName()).orElse(null);
-            if (racerEntity == null){
+            if (racerEntity == null) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }

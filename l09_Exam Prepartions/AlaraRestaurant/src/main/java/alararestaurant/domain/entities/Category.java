@@ -2,13 +2,14 @@ package alararestaurant.domain.entities;
 
 //•	name – text with min length 3 and max length 30 (required)
 //        •	items – collection of type Item
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity(name = "categories")
-public class Category extends BaseEntity{
+public class Category extends BaseEntity {
 
     @Column(nullable = false)
     private String name;

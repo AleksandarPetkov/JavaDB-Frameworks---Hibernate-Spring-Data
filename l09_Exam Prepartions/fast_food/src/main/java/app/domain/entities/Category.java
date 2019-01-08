@@ -6,7 +6,7 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity(name = "categories")
-public class Category extends BaseEntity{
+public class Category extends BaseEntity {
 
     @Column(nullable = false)
     private String name;

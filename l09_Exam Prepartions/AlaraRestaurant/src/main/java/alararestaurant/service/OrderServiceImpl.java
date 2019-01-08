@@ -64,7 +64,7 @@ public class OrderServiceImpl implements OrderService {
 
         OrderRootSeedDto orderRootSeedDto = this.xmlParser.parseXml(OrderRootSeedDto.class, ORDERS_FILE_PATH);
         for (OrderSeedDto orderSeedDto : orderRootSeedDto.getOrderSeedDtos()) {
-            if (!this.validationUtil.isValid(orderSeedDto)){
+            if (!this.validationUtil.isValid(orderSeedDto)) {
                 sb.append("Invalid data format.").append(System.lineSeparator());
                 continue;
             }
@@ -78,11 +78,11 @@ public class OrderServiceImpl implements OrderService {
 
             //Check order type
             OrderType type = null;
-            if (orderSeedDto.getOrderType().equals("ForHere")){
+            if (orderSeedDto.getOrderType().equals("ForHere")) {
                 type = OrderType.valueOf("ForHere");
-            } else if (orderSeedDto.getOrderType().equals("ToGo")){
+            } else if (orderSeedDto.getOrderType().equals("ToGo")) {
                 type = OrderType.valueOf("ToGo");
-            } else{
+            } else {
                 sb.append("Invalid data format.").append(System.lineSeparator());
                 continue;
             }
@@ -98,7 +98,7 @@ public class OrderServiceImpl implements OrderService {
                 OrderItem orderItem = new OrderItem();
 
                 Item item = this.itemRepository.findByName(itemSeedDto.getName()).orElse(null);
-                if (item == null){
+                if (item == null) {
                     sb.append("Invalid data format.").append(System.lineSeparator());
                     continue;
                 }

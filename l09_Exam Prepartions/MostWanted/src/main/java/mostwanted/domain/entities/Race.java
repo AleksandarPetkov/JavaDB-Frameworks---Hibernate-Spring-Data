@@ -1,9 +1,10 @@
 package mostwanted.domain.entities;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "races")
-public class Race extends BaseEntity{
+public class Race extends BaseEntity {
 
     @Column(nullable = false, columnDefinition = "INT(11) default 0")
     private Integer laps;

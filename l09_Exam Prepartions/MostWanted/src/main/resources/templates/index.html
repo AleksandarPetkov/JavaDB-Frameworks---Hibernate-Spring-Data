@@ -5,14 +5,14 @@
                 <div class="col-md-12 d-flex justify-content-center">
                     <h1>Most Wanted</h1>
                 </div>
-                <hr class="hr-background" />
+                <hr class="hr-background"/>
                 <div class="col-md-12 d-flex justify-content-center">
                     <h4>Click the buttons below to export some data from the database.</h4>
                 </div>
                 <div class="col-md-12 d-flex justify-content-center">
                     <th:block th:if="${areImported == true}">
-                        <a class="btn btn-primary mx-5 my-5"th:href="@{/export/racing-towns}">Export Racing Towns</a>
-                        <a class="btn btn-primary mx-5 my-5"th:href="@{/export/racing-cars}">Export Racing Cars</a>
+                        <a class="btn btn-primary mx-5 my-5" th:href="@{/export/racing-towns}">Export Racing Towns</a>
+                        <a class="btn btn-primary mx-5 my-5" th:href="@{/export/racing-cars}">Export Racing Cars</a>
                     </th:block>
                     <th:block th:if="${areImported == false}">
                         <p>Import JSON and XML files first.</p>

@@ -49,14 +49,14 @@ public class ItemServiceImpl implements ItemService {
     public String importItems(String items) {
         StringBuilder sb = new StringBuilder();
 
-        ItemsSeedDto[] itemsSeedDtos = this.gson.fromJson(items,ItemsSeedDto[].class);
+        ItemsSeedDto[] itemsSeedDtos = this.gson.fromJson(items, ItemsSeedDto[].class);
         for (ItemsSeedDto itemSeedDto : itemsSeedDtos) {
-            if (!this.validationUtil.isValid(itemSeedDto)){
+            if (!this.validationUtil.isValid(itemSeedDto)) {
                 sb.append("Invalid data format.").append(System.lineSeparator());
                 continue;
             }
 
-            if(this.itemRepository.findByName(itemSeedDto.getName()).orElse(null) != null){
+            if (this.itemRepository.findByName(itemSeedDto.getName()).orElse(null) != null) {
                 sb.append("Invalid data format.").append(System.lineSeparator());
                 continue;
             }

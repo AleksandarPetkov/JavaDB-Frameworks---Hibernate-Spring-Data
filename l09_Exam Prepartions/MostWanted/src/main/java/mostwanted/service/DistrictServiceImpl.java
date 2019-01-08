@@ -49,16 +49,16 @@ public class DistrictServiceImpl implements DistrictService {
     @Override
     public String importDistricts(String districtsFileContent) {
         StringBuilder sb = new StringBuilder();
-        DistrictsSeedDto[] districtsSeedDtos = this.gson.fromJson(districtsFileContent,  DistrictsSeedDto[].class);
+        DistrictsSeedDto[] districtsSeedDtos = this.gson.fromJson(districtsFileContent, DistrictsSeedDto[].class);
 
         for (DistrictsSeedDto districtsDto : districtsSeedDtos) {
-            if (!validationUtil.isValid(districtsDto)){
+            if (!validationUtil.isValid(districtsDto)) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }
 
             District districtEntity = this.districtRepository.findByName(districtsDto.getName()).orElse(null);
-            if (districtEntity != null){
+            if (districtEntity != null) {
                 sb.append(Constants.DUPLICATE_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }

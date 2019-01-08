@@ -1,8 +1,10 @@
 package alararestaurant.domain.entities;
+
 import javax.persistence.*;
 import java.util.List;
+
 @Entity(name = "employees")
-public class Employee extends BaseEntity{
+public class Employee extends BaseEntity {
 
     @Column(nullable = false)
     private String name;

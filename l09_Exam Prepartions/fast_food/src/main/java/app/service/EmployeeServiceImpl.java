@@ -46,13 +46,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         EmployeeSeedDto[] employeeSeedDts = this.gson.fromJson(this.readEmployees(), EmployeeSeedDto[].class);
         for (EmployeeSeedDto employeeSeedDto : employeeSeedDts) {
-            if (!this.validatorUtil.isValid(employeeSeedDto)){
+            if (!this.validatorUtil.isValid(employeeSeedDto)) {
                 sb.append("Error: Incorrect Data!").append(System.lineSeparator());
                 continue;
             }
 
             Position positionEntity = this.positionRepository.findByPosition(employeeSeedDto.getPosition()).orElse(null);
-            if (positionEntity == null){
+            if (positionEntity == null) {
                 positionEntity = new Position();
                 positionEntity.setPosition(employeeSeedDto.getPosition());
                 this.positionRepository.saveAndFlush(positionEntity);

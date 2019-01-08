@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 
 
@@ -52,7 +53,7 @@ public class ItemServiceImpl implements ItemService {
                 continue;
             }
 
-            if(this.itemRepository.findByName(itemSeedDto.getName()).orElse(null) != null){
+            if (this.itemRepository.findByName(itemSeedDto.getName()).orElse(null) != null) {
                 sb.append("Error: Incorrect Data!").append(System.lineSeparator());
                 continue;
             }

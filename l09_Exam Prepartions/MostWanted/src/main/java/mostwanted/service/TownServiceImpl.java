@@ -50,13 +50,13 @@ public class TownServiceImpl implements TownService {
         TownSeedDto[] townSeedDtos = this.gson.fromJson(townsFileContent, TownSeedDto[].class);
 
         for (TownSeedDto townDto : townSeedDtos) {
-            if (!this.validationUtil.isValid(townDto)){
+            if (!this.validationUtil.isValid(townDto)) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }
 
             Town townEntity = this.townRepository.findByName(townDto.getName()).orElse(null);
-            if (townEntity != null){
+            if (townEntity != null) {
                 sb.append(Constants.DUPLICATE_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }

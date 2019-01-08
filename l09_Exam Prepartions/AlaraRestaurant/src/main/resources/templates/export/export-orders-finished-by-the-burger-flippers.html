@@ -6,13 +6,14 @@
                     <h1>Orders finished by the Burger Flippers</h1>
                 </div>
                 <hr class="hr-background"/>
-                <form >
+                <form>
                     <div class="col-md-12 d-flex justify-content-center">
                         <label for="export-order-textarea">Orders finished by the Burger Flippers:</label>
                     </div>
                     <div class="col-md-12 d-flex justify-content-center">
                         <div class="col-md-8 d-flex justify-content-center">
-                            <textarea class="form-control" id="export-order-textarea" rows="10" th:text="${ordersFinishedByTheBurgerFlippers}" readonly></textarea>
+                            <textarea class="form-control" id="export-order-textarea" rows="10"
+                                      th:text="${ordersFinishedByTheBurgerFlippers}" readonly></textarea>
                         </div>
                     </div>
                 </form>

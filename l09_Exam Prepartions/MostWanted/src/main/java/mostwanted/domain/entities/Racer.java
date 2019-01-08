@@ -10,7 +10,7 @@ import java.util.List;
 //            •	homeTown – a Town entity.
 //            •	cars – a collection of Car entity.
 @Entity(name = "racers")
-public class Racer extends BaseEntity{
+public class Racer extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String name;

@@ -42,8 +42,8 @@ public class ImportController extends BaseController {
 
     @GetMapping("/xml")
     public ModelAndView importXml() {
-        boolean[] areImported = new boolean[] {
-            this.orderService.ordersAreImported()
+        boolean[] areImported = new boolean[]{
+                this.orderService.ordersAreImported()
         };
 
         return super.view("xml/import-xml", "areImported", areImported);

@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 
 @Entity(name = "cars")
-public class Car extends BaseEntity{
+public class Car extends BaseEntity {
 
     @Column(nullable = false)
     private String brand;

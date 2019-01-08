@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity(name = "race_entries")
-public class RaceEntry extends BaseEntity{
+public class RaceEntry extends BaseEntity {
 
     @Column(name = "has_finished")
     private boolean hasFinished;

@@ -4,13 +4,14 @@ package alararestaurant.domain.entities;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+
 //•	customer – text (required)
 //        •	dateTime – date and time of the order (required)
 //        •	type – OrderType enumeration with possible values: “ForHere, ToGo (default: ForHere)” (required)
 //        •	employee – The employee who will process the order (required)
 //        •	orderItems – collection of type OrderItem
 @Entity(name = "orders")
-public class Order extends BaseEntity{
+public class Order extends BaseEntity {
 
     @Column(nullable = false)
     private String customer;

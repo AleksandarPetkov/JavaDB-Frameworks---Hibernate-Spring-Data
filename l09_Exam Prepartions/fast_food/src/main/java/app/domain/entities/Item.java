@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Entity(name = "items")
-public class Item extends BaseEntity{
+public class Item extends BaseEntity {
 
     @Column(nullable = false, unique = true)
     private String name;

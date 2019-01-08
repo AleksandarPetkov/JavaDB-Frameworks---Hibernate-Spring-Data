@@ -1,4 +1,5 @@
 package alararestaurant.util;
+
 import javax.xml.bind.JAXBException;
 
 public interface XmlParser {

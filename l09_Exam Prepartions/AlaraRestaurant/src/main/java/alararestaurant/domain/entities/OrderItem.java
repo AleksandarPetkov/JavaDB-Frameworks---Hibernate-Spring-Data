@@ -1,7 +1,6 @@
 package alararestaurant.domain.entities;
 
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,7 +10,7 @@ import javax.persistence.ManyToOne;
 //        •	item – the order’s item (required)
 //        •	quantity – the quantity of the item in the order (required, non-negative and non-zero)
 @Entity(name = "order_items")
-public class OrderItem extends BaseEntity{
+public class OrderItem extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "order_id", referencedColumnName = "id", nullable = false)

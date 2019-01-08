@@ -1,4 +1,5 @@
 package mostwanted.domain.dtos.raceentries;
+
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.*;
 

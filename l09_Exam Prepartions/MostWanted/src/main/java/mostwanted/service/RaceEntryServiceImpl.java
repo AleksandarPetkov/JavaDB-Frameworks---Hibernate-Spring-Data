@@ -20,7 +20,7 @@ import javax.xml.bind.JAXBException;
 import java.io.IOException;
 
 @Service
-public class RaceEntryServiceImpl implements RaceEntryService{
+public class RaceEntryServiceImpl implements RaceEntryService {
     private static final String RACE_ENTRY_FILE_PATH = "D:\\MostWanted\\src\\main\\resources\\files\\race-entries.xml";
 
     private final RaceEntryRepository raceEntryRepository;
@@ -60,14 +60,14 @@ public class RaceEntryServiceImpl implements RaceEntryService{
         RaceEntryRootSeedDto raceEntryRootSeedDto = this.xmlParser.parseXml(RaceEntryRootSeedDto.class, RACE_ENTRY_FILE_PATH);
 
         for (RaceEntrySeedDto raceEntryDto : raceEntryRootSeedDto.getRaceEntrySeedDtos()) {
-            if (!this.validationUtil.isValid(raceEntryDto)){
+            if (!this.validationUtil.isValid(raceEntryDto)) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }
 
             Car carEntity = this.carRepository.findById(raceEntryDto.getCarId()).orElse(null);
             Racer racerEntity = this.racerRepository.findByName(raceEntryDto.getRacer()).orElse(null);
-            if (racerEntity == null || carEntity == null){
+            if (racerEntity == null || carEntity == null) {
                 sb.append(Constants.INCORRECT_DATA_MESSAGE).append(System.lineSeparator());
                 continue;
             }

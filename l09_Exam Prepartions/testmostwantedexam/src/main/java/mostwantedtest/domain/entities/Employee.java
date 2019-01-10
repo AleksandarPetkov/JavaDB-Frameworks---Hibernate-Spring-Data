@@ -30,10 +30,7 @@ public class Employee extends BaseEntity{
     @JoinColumn(name = "branch_id", referencedColumnName = "id")
     private Branch branch;
 
-    @ManyToMany
-    @JoinTable(name = "employee_clients",
-            joinColumns = @JoinColumn(name = "employee_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "client_id", referencedColumnName = "id"))
+    @ManyToMany(mappedBy = "employees", targetEntity = Client.class)
     private List<Client> clients;
 
     public Employee() {

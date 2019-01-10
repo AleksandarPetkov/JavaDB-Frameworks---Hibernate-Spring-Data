@@ -1,9 +1,8 @@
 package mostwantedtest.config;
 
-import mostwantedtest.util.FileUtil;
-import mostwantedtest.util.FileUtilImpl;
-import mostwantedtest.util.ValidationUtil;
-import mostwantedtest.util.ValidationUtilImpl;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import mostwantedtest.util.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,10 +15,10 @@ public class ApplicationBeanConfiguration {
         return new FileUtilImpl();
     }
 
-//    @Bean
-//    public Gson gson() {
-//        return new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-//    }
+    @Bean
+    public Gson gson() {
+        return new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+    }
 
     @Bean
     public ValidationUtil validatorUtil() {
@@ -29,5 +28,10 @@ public class ApplicationBeanConfiguration {
     @Bean
     public ModelMapper modelMapper() {
         return new ModelMapper();
+    }
+
+    @Bean
+    public XmlParser xmlParser() {
+        return new XmlParserImpl();
     }
 }

@@ -5,6 +5,7 @@ package mostwantedtest.domain.dtos.json;
 //        "branch_name" : "Mendota Branch",
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import com.sun.istack.NotNull;
 
 import javax.validation.constraints.Min;
@@ -15,6 +16,7 @@ public class SeedEmployeeDto {
 
     @Expose
     @NotNull
+    @SerializedName("full_name")
     private String fullName;
 
     @Expose
@@ -22,10 +24,12 @@ public class SeedEmployeeDto {
     private BigDecimal salary;
 
     @Expose
-    private LocalDate startedOn;
+    @SerializedName("started_on")
+    private String startedOn;
 
     @Expose
     @NotNull
+    @SerializedName("branch_name")
     private String branchName;
 
     public SeedEmployeeDto() {
@@ -47,11 +51,11 @@ public class SeedEmployeeDto {
         this.salary = salary;
     }
 
-    public LocalDate getStartedOn() {
+    public String getStartedOn() {
         return startedOn;
     }
 
-    public void setStartedOn(LocalDate startedOn) {
+    public void setStartedOn(String startedOn) {
         this.startedOn = startedOn;
     }
 

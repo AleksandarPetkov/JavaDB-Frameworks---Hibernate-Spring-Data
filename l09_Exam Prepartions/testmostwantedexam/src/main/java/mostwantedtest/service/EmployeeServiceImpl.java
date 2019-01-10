@@ -2,6 +2,8 @@ package mostwantedtest.service;
 
 import com.google.gson.Gson;
 import mostwantedtest.domain.dtos.json.SeedEmployeeDto;
+import mostwantedtest.domain.entities.Branch;
+import mostwantedtest.domain.entities.Employee;
 import mostwantedtest.repository.BranchRepository;
 import mostwantedtest.repository.EmployeeRepository;
 import mostwantedtest.util.FileUtil;
@@ -10,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -43,6 +46,31 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         SeedEmployeeDto[] employeeDtos = this.gson.fromJson(fileContent, SeedEmployeeDto[].class);
 
+
+        for (SeedEmployeeDto employeeDto : employeeDtos) {
+            Branch branch = this.branchRepository.findByName(employeeDto.getBranchName());
+            if (branch == null){
+                sb.append("Error: Incorrect Data!").append(System.lineSeparator());
+                continue;
+            }
+
+            if (!this.validatorUtil.isValid(employeeDto)){
+                sb.append("Error: Incorrect Data!").append(System.lineSeparator());
+                continue;
+            }
+
+            Employee employee = this.modelMapper.map(employeeDto, Employee.class);
+            String[] fullName = employeeDto.getFullName().split("\\s+");
+            employee.setFirstName(fullName[0]);
+            employee.setLastName(fullName[1]);
+            employee.setBranch(branch);
+            LocalDate startedOn = LocalDate.parse(employeeDto.getStartedOn());
+            employee.setStartedOn(startedOn);
+
+            sb.append(String.format("Successfully imported Employee - %s %s.",employee.getFirstName(), employee.getLastName()))
+                    .append(System.lineSeparator());
+            this.employeeRepository.saveAndFlush(employee);
+        }
         return sb.toString();
     }
 }

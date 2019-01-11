@@ -48,7 +48,8 @@ public class ClientServiceImpl implements ClientService {
             String[] employeeName = seedClientDto.getEmployee().split("\\s+");
             Employee employee = this.employeeRepository.findByFirstNameAndLastName(employeeName[0], employeeName[1]).orElse(null);
 
-            if (!this.validatorUtil.isValid(seedClientDto) || employee == null){
+            Client existClient = this.clientRepository.findByFullName(seedClientDto.getFirstName() +" "+ seedClientDto.getLastName()).orElse(null);
+            if (!this.validatorUtil.isValid(seedClientDto) || employee == null || existClient != null){
                 sb.append("Error: Incorrect Data!").append(System.lineSeparator());
                 continue;
             }

@@ -1,6 +1,9 @@
 package mostwantedtest.service;
 
+import mostwantedtest.domain.dtos.xml.BankAccountXml;
 import mostwantedtest.domain.dtos.xml.SeedBankAccountDto;
+import mostwantedtest.domain.entities.BankAccount;
+import mostwantedtest.domain.entities.Client;
 import mostwantedtest.repository.BankAccountRepository;
 import mostwantedtest.repository.ClientRepository;
 import mostwantedtest.util.FileUtil;
@@ -50,8 +53,23 @@ public class BankAccountServiceImpl implements BankAccountService{
         SeedBankAccountDto orderRootSeedDto = (SeedBankAccountDto) unmarshaller
                 .unmarshal(new File(BANK_ACCOUNT_FILE_PATH));
 
+        for (BankAccountXml bankAccount : orderRootSeedDto.getBankAccounts()) {
+            Client client = this.clientRepository.findByFullName(bankAccount.getClient()).orElse(null);
+
+            if (!this.validationUtil.isValid(bankAccount) || client == null){
+                sb.append("Error: Incorrect Data!").append(System.lineSeparator());
+                continue;
+            }
+
+            BankAccount currentBankAccount = this.modelMapper.map(bankAccount, BankAccount.class);
+           currentBankAccount.setClient(client);
+
+           this.bankAccountRepository.saveAndFlush(currentBankAccount);
+            sb.append(String.format("Successfully imported Bank Account with number: %s.",bankAccount.getAccountNumber()))
+                    .append(System.lineSeparator());
+        }
         System.out.println();
 
-        return null;
+        return sb.toString();
     }
 }

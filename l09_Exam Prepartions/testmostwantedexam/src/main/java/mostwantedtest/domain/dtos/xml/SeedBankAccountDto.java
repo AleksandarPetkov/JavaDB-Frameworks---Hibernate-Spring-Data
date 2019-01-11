@@ -11,16 +11,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SeedBankAccountDto {
 
     @XmlElement(name = "bank-account")
-    private BankAccount[] bankAccounts;
+    private BankAccountXml[] bankAccounts;
 
     public SeedBankAccountDto() {
     }
 
-    public BankAccount[] getBankAccounts() {
+    public BankAccountXml[] getBankAccounts() {
         return bankAccounts;
     }
 
-    public void setBankAccounts(BankAccount[] bankAccounts) {
+    public void setBankAccounts(BankAccountXml[] bankAccounts) {
         this.bankAccounts = bankAccounts;
     }
 }

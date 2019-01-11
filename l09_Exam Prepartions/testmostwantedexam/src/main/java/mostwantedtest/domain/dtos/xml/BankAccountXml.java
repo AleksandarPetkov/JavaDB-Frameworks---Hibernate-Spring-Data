@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 
 @XmlRootElement(name = "bank-account")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class BankAccount {
+public class BankAccountXml {
 
     @XmlAttribute(name = "client")
     private String client;
@@ -23,7 +23,7 @@ public class BankAccount {
     @XmlElement(name = "balance")
     private BigDecimal balance;
 
-    public BankAccount() {
+    public BankAccountXml() {
     }
 
     public String getClient() {
